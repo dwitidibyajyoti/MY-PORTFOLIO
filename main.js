@@ -11,17 +11,29 @@
 // addEventListenerByClass('.img-one', 'mousemove', view);
 const trigger = document.querySelectorAll('.img-one,.img-two');
 const activeOne = document.querySelectorAll('.discripson-one');
-console.log(trigger);
+const activetwo = document.querySelectorAll('.discripson-two');
 
 function handaleEnter() {
-  activeOne.forEach((one) => {
-    one.classList.add('active');
-  });
+  if (this.classList[0] === 'img-one') {
+    activeOne.forEach((one) => {
+      one.classList.add('active');
+    });
+  } else {
+    activetwo.forEach((one) => {
+      one.classList.add('active');
+    });
+  }
 }
 function hundaleLeave() {
-  activeOne.forEach((one) => {
-    one.classList.remove('active');
-  });
+  if (this.classList[0] === 'img-one') {
+    activeOne.forEach((one) => {
+      one.classList.remove('active');
+    });
+  } else {
+    activetwo.forEach((one) => {
+      one.classList.remove('active');
+    });
+  }
 }
 
 trigger.forEach((trigger) =>
@@ -29,25 +41,4 @@ trigger.forEach((trigger) =>
 );
 trigger.forEach((trigger) =>
   trigger.addEventListener('mouseleave', hundaleLeave)
-);
-
-const triggerTwo = document.querySelectorAll('.img-two');
-const activetwo = document.querySelectorAll('.discripson-two');
-
-function handaleEnterTwo() {
-  activetwo.forEach((one) => {
-    one.classList.add('active');
-  });
-}
-function hundaleLeaveTwo() {
-  activetwo.forEach((one) => {
-    one.classList.remove('active');
-  });
-}
-
-triggerTwo.forEach((trigger) =>
-  trigger.addEventListener('mouseenter', handaleEnterTwo)
-);
-triggerTwo.forEach((trigger) =>
-  trigger.addEventListener('mouseleave', hundaleLeaveTwo)
 );
