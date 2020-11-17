@@ -42,3 +42,13 @@ trigger.forEach((trigger) =>
 trigger.forEach((trigger) =>
   trigger.addEventListener('mouseleave', hundaleLeave)
 );
+//page animation;
+const portfolio = document.querySelector('.Portfolioa');
+const contact = document.querySelector('.Contact');
+const home = document.querySelector('.home');
+const portfolioSection = document.querySelector('.Portfolio');
+portfolio.addEventListener('click', goDown);
+function goDown() {
+  let distance = portfolioSection.offsetTop;
+  scrollBy({top: distance, behavior: 'smooth'});
+}
