@@ -303,7 +303,7 @@ body {
   z-index: -1;
 }
 
-.Portfolio .one {
+.Portfolio .pone {
   top: 3rem;
   left: 24rem;
   width: 6rem;
@@ -311,7 +311,7 @@ body {
   background-color: #ed9e6b;
 }
 
-.Portfolio .two {
+.Portfolio .ptwo {
   top: 5rem;
   left: 9rem;
   width: 10rem;
@@ -319,7 +319,7 @@ body {
   background-color: #1cce2e;
 }
 
-.Portfolio .three {
+.Portfolio .pthree {
   top: 19rem;
   left: 9rem;
   width: 8rem;
@@ -327,7 +327,7 @@ body {
   background-color: #9e809a;
 }
 
-.Portfolio .four {
+.Portfolio .pfour {
   top: 28rem;
   left: 12rem;
   width: 6rem;
@@ -335,7 +335,7 @@ body {
   background-color: #96d7c5;
 }
 
-.Portfolio .five {
+.Portfolio .pfive {
   top: 19rem;
   left: 20rem;
   width: 9rem;
@@ -343,7 +343,7 @@ body {
   background-color: #d4f94e;
 }
 
-.Portfolio .six {
+.Portfolio .psix {
   top: 32rem;
   left: 33rem;
   width: 10rem;
@@ -351,7 +351,7 @@ body {
   background-color: #d83cbe;
 }
 
-.Portfolio .seven {
+.Portfolio .pseven {
   top: 22rem;
   right: 27rem;
   width: 12rem;
@@ -359,7 +359,7 @@ body {
   background-color: #f9524e;
 }
 
-.Portfolio .eight {
+.Portfolio .peight {
   top: 6rem;
   right: 10rem;
   width: 9rem;
@@ -367,7 +367,7 @@ body {
   background-color: #d61e90;
 }
 
-.Portfolio .nine {
+.Portfolio .pnine {
   top: 2rem;
   right: 27rem;
   width: 10rem;
@@ -375,7 +375,7 @@ body {
   background-color: #343ecf;
 }
 
-.Portfolio .ten {
+.Portfolio .pten {
   top: 32rem;
   right: 8rem;
   width: 6rem;
@@ -383,7 +383,7 @@ body {
   background-color: #ad8ca0;
 }
 
-.Portfolio .eleven {
+.Portfolio .peleven {
   top: 34rem;
   right: 35rem;
   width: 10rem;
@@ -391,7 +391,7 @@ body {
   background-color: #ad8ca0;
 }
 
-.Portfolio .twelve {
+.Portfolio .ptwelve {
   top: 17rem;
   right: 6rem;
   width: 12rem;
@@ -399,11 +399,11 @@ body {
   background-color: #ad8ca0;
 }
 
-.Portfolio .thirteen {
+.Portfolio .pthirteen {
   background-color: #ad8ca0;
 }
 
-.Portfolio .fourteen {
+.Portfolio .pfourteen {
   background-color: #ad8ca0;
 }
 
@@ -474,6 +474,8 @@ body {
   opacity: 0;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+  -webkit-transform: translate(200px, 0px);
+          transform: translate(200px, 0px);
 }
 
 .my-work .discripson-one h3 {
@@ -500,6 +502,8 @@ body {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
   opacity: 0;
+  -webkit-transform: translate(-200px, 0px);
+          transform: translate(-200px, 0px);
 }
 
 .my-work .discripson-two h3 {
@@ -514,6 +518,8 @@ body {
 
 .my-work .active {
   opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .my-work .circle {
