@@ -13,15 +13,18 @@
 const trigger = document.querySelectorAll('.img-one,.img-two');
 const activeOne = document.querySelectorAll('.discripson-one');
 const activetwo = document.querySelectorAll('.discripson-two');
+let animation = false;
 
 function handaleEnter() {
-  if (this.classList[0] === 'img-one') {
+  if (this.classList[0] === 'img-one' && animation == true) {
     activeOne.forEach((one) => {
       one.classList.add('active');
+      console.log(this);
     });
-  } else {
+  } else if (this.classList[0] === 'img-two' && animation == true) {
     activetwo.forEach((one) => {
       one.classList.add('active');
+      console.log(this);
     });
   }
 }
@@ -139,11 +142,13 @@ const woneTimeline = gsap.timeline({
   defaults: {
     duration: 2,
     opacity: 0,
+    onComplete: onComplete,
+    onStart: onStart,
   },
   scrollTrigger: {
     trigger: '.wone',
-    start: 'top 1%',
-    end: 'bottom 30%',
+    start: 'top 30%',
+    end: 'bottom 50%',
     toggleActions: 'restart reverse restart reverse',
     //markers: true,
   },
@@ -162,11 +167,13 @@ const wtwoTimeline = gsap.timeline({
   defaults: {
     duration: 2,
     opacity: 0,
+    onComplete: onComplete,
+    onStart: onStart,
   },
   scrollTrigger: {
     trigger: '.wtwo',
-    start: 'top 1%',
-    end: 'bottom 30%',
+    start: 'top 30%',
+    end: 'bottom 50%',
     toggleActions: 'restart reverse restart reverse',
     //markers: true,
   },
@@ -186,11 +193,13 @@ const wthreeTimeline = gsap.timeline({
   defaults: {
     duration: 2,
     opacity: 0,
+    onComplete: onComplete,
+    onStart: onStart,
   },
   scrollTrigger: {
     trigger: '.wthree',
-    start: 'top 1%',
-    end: 'bottom 30%',
+    start: 'top 30%',
+    end: 'bottom 50%',
     toggleActions: 'restart reverse restart reverse',
     //markers: true,
   },
@@ -209,11 +218,13 @@ const wfourTimeline = gsap.timeline({
   defaults: {
     duration: 2,
     opacity: 0,
+    onComplete: onComplete,
+    onStart: onStart,
   },
   scrollTrigger: {
     trigger: '.wfour',
-    start: 'top 1%',
-    end: 'bottom 30%',
+    start: 'top 30%',
+    end: 'bottom 50%',
     toggleActions: 'restart reverse restart reverse',
     //markers: true,
   },
@@ -227,3 +238,10 @@ wfourTimeline
   .from('.wfour .four', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wfour .five', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wfour .six', {y: -300, ease: 'bounce'}, '<0.3');
+//call back function
+function onComplete() {
+  animation = true;
+}
+function onStart() {
+  animation = false;
+}
