@@ -13,7 +13,14 @@
 const trigger = document.querySelectorAll('.img-one,.img-two');
 const activeOne = document.querySelectorAll('.discripson-one');
 const activetwo = document.querySelectorAll('.discripson-two');
+const mainContent = document.querySelector('.displayContent');
+const loodAnimay = document.querySelector('.lodedive');
+
 let animation = false;
+window.addEventListener('load', () => {
+  mainContent.classList.remove('onlode');
+  loodAnimay.classList.add('onlode');
+});
 
 function handaleEnter() {
   if (this.classList[0] === 'img-one' && animation == true) {
@@ -109,8 +116,8 @@ const protfolioTimeline = gsap.timeline({
   scrollTrigger: {
     trigger: '.Portfolio',
     //markers: true,
-    start: 'top 0%',
-    end: 'bottom 30%',
+    start: 'top 30%',
+    end: 'bottom 50%',
     //eveant:onEnter-onLeave-onEnterBack-onLiveBack
     toggleActions: 'restart reverse restart reverse',
     //options:play-pause-resume-reset-restart-complete-reverse-none
