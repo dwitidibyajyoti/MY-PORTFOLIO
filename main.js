@@ -1,37 +1,48 @@
-// function view(e) {
-//   console.log(e);
-// }
-
-// function addEventListenerByClass(className, event, fn) {
-//   var list = document.querySelectorAll(className);
-//   for (var i = 0, len = list.length; i < len; i++) {
-//     list[i].addEventListener(event, fn, false);
-//   }
-// }
-// addEventListenerByClass('.img-one', 'mousemove', view);
-
 const trigger = document.querySelectorAll('.img-one,.img-two');
 const activeOne = document.querySelectorAll('.discripson-one');
 const activetwo = document.querySelectorAll('.discripson-two');
 const mainContent = document.querySelector('.displayContent');
 const loodAnimay = document.querySelector('.lodedive');
+const year = document.querySelector('.year');
+const footer = document.querySelector('.footrmain');
+const iconPack = document.querySelector('.icon-pack');
 
 let animation = false;
 window.addEventListener('load', () => {
   mainContent.classList.remove('onlode');
   loodAnimay.classList.add('onlode');
 });
+// debounce function
+const debounce = (fn, dely) => {
+  let setTimeoutId;
+  return function (...arg) {
+    if (setTimeoutId) {
+      clearTimeout(setTimeoutId);
+    }
+    setTimeoutId = setTimeout(() => {
+      return fn(...arg);
+    }, dely);
+  };
+};
+// footer icon pack display: none
+function checkSlide() {
+  let scrollY = Math.floor(window.scrollY);
+  let offSetTop = footer.offsetTop;
+  if (scrollY === offSetTop) {
+    iconPack.classList.add('remove');
+  } else {
+    iconPack.classList.remove('remove');
+  }
+}
 
 function handaleEnter() {
   if (this.classList[0] === 'img-one' && animation == true) {
     activeOne.forEach((one) => {
       one.classList.add('active');
-      console.log(this);
     });
   } else if (this.classList[0] === 'img-two' && animation == true) {
     activetwo.forEach((one) => {
       one.classList.add('active');
-      console.log(this);
     });
   }
 }
@@ -47,23 +58,34 @@ function hundaleLeave() {
   }
 }
 
-trigger.forEach((trigger) =>
-  trigger.addEventListener('mouseenter', handaleEnter)
-);
-trigger.forEach((trigger) =>
-  trigger.addEventListener('mouseleave', hundaleLeave)
-);
 //page animation;
 const portfolio = document.querySelector('.Portfolioa');
 const contact = document.querySelector('.Contact');
 const home = document.querySelector('.home');
 const portfolioSection = document.querySelector('.Portfolio');
-portfolio.addEventListener('click', goDown);
+const footerMain = document.querySelector('.footrmain');
+const goTop = document.querySelector('.goTop');
+
+function goDownfooter() {
+  let distance = footerMain.offsetTop;
+  scrollBy({top: distance, behavior: 'smooth'});
+}
+
 function goDown() {
   let distance = portfolioSection.offsetTop;
   scrollBy({top: distance, behavior: 'smooth'});
 }
+
+function goHome() {
+  // let distance = home.offSetTop;
+
+  // window.scrollBy({top: distance, behavior: 'smooth'});
+
+  window.scrollTo(0, 0);
+}
+
 //gsap animation:
+
 gsap.registerPlugin(ScrollTrigger);
 
 const timeline = gsap.timeline({
@@ -78,6 +100,7 @@ const timeline = gsap.timeline({
     //options:play-pause-resume-reset-restart-complete-reverse-none
   },
 });
+
 gsap.from(
   '.icon-pack',
   {x: -300, ease: 'circ', duration: '2', delay: 0.5, opacity: 0},
@@ -111,6 +134,7 @@ timeline
   );
 
 //gsap portfolio animation:
+
 const protfolioTimeline = gsap.timeline({
   defaults: {duration: '2', opacity: 0},
   scrollTrigger: {
@@ -143,6 +167,7 @@ protfolioTimeline
   .from('.peight', {y: 300, ease: 'bounce'}, '<0.3')
   .from('.pone', {y: -300, ease: 'bounce'}, '<0.2')
   .from('.ptwelve', {y: -300, ease: 'bounce'}, '0.1');
+
 //gsap section animation: WONE
 
 const woneTimeline = gsap.timeline({
@@ -160,6 +185,7 @@ const woneTimeline = gsap.timeline({
     //markers: true,
   },
 });
+
 woneTimeline
   .from('.wone .img-one', {x: -700, scale: 2})
   .from('.wone .img-two', {x: 700, scale: 2}, 0)
@@ -169,7 +195,9 @@ woneTimeline
   .from('.wone .four', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wone .five', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wone .six', {y: -300, ease: 'bounce'}, '<0.3');
+
 //gsap section animation: WTWO
+
 const wtwoTimeline = gsap.timeline({
   defaults: {
     duration: 2,
@@ -196,6 +224,7 @@ wtwoTimeline
   .from('.wtwo .six', {y: -300, ease: 'bounce'}, '<0.3');
 
 //gsap section animation: WTHREE
+
 const wthreeTimeline = gsap.timeline({
   defaults: {
     duration: 2,
@@ -220,7 +249,9 @@ wthreeTimeline
   .from('.wthree .four', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wthree .five', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wthree .six', {y: -300, ease: 'bounce'}, '<0.3');
+
 //gsap section animation: WFOUR
+
 const wfourTimeline = gsap.timeline({
   defaults: {
     duration: 2,
@@ -245,6 +276,27 @@ wfourTimeline
   .from('.wfour .four', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wfour .five', {y: -300, ease: 'bounce'}, '<0.3')
   .from('.wfour .six', {y: -300, ease: 'bounce'}, '<0.3');
+
+// gsap animation for footr
+
+const footerTimeLine = gsap.timeline({
+  defaults: {
+    duration: 2,
+    opacity: 0,
+  },
+  scrollTrigger: {
+    trigger: '.footrmain',
+    start: 'top 30%',
+    end: 'bottom 50%',
+    toggleActions: 'restart reverse restart reverse',
+    //markers: true,
+  },
+});
+footerTimeLine
+  .from('.footrmain .one', {y: -200, scale: 1.1, ease: 'bounce'})
+  .from('.footrmain .two', {y: -200, scale: 1.1, ease: 'bounce'}, '<0.2')
+  .from('.footrmain .three', {y: -200, scale: 1.5, ease: 'bounce'}, '<0.2');
+
 //call back function
 function onComplete() {
   animation = true;
@@ -252,3 +304,15 @@ function onComplete() {
 function onStart() {
   animation = false;
 }
+contact.addEventListener('click', goDownfooter);
+
+portfolio.addEventListener('click', goDown);
+goTop.addEventListener('click', goHome);
+
+trigger.forEach((trigger) =>
+  trigger.addEventListener('mouseenter', handaleEnter)
+);
+trigger.forEach((trigger) =>
+  trigger.addEventListener('mouseleave', hundaleLeave)
+);
+window.addEventListener('scroll', debounce(checkSlide, 200));
