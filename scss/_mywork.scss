@@ -1,0 +1,222 @@
+.my-work {
+  max-height: 100vh;
+  height: 100vh;
+  display: grid;
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  scroll-snap-align: center;
+  max-width: 1536px;
+  margin: auto;
+
+  .img-one {
+    width: 45.6rem;
+    height: 24.3rem;
+    @include responsive(phone-l) {
+      margin: 0rem 2rem;
+    }
+    @include responsive(phone-m) {
+      margin: 0rem 0rem;
+      margin-left: 0rem;
+    }
+    .img-one-responsive {
+      display: none;
+    }
+    @include responsive(phone-l) {
+      width: 45.6rem-15rem;
+      height: 24.3rem-15rem;
+      .img-one-responsive {
+        display: block;
+      }
+      .img-one-full {
+        display: none;
+      }
+    }
+    @include responsive(phone-l) {
+    }
+
+    grid-column-start: 10;
+    //grid-column-end: 4;
+    grid-row-start: 14;
+    // grid-row-end: 4;
+    margin-right: 5rem;
+    img {
+      box-shadow: -27px -19px 30px 1px rgba(0, 0, 0, 0.25);
+    }
+    @include responsive(tab-land) {
+      width: 45.6rem-10rem;
+      height: 24.3rem-10rem;
+    }
+    @include responsive(tab-port) {
+      margin-right: 12rem;
+    }
+  }
+  .img-two {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 8;
+    width: 45.6rem;
+    height: 24.3rem;
+    @include responsive(phone-l) {
+      margin: 0rem 2rem;
+    }
+
+    .img-two-responsive {
+      display: none;
+    }
+    @include responsive(phone-l) {
+      width: 45.6rem-15rem;
+      height: 24.3rem-15rem;
+      .img-two-full {
+        display: none;
+      }
+      .img-two-responsive {
+        display: block;
+      }
+    }
+    @include responsive(tab-land) {
+      width: 45.6rem-10rem;
+      height: 24.3rem-10rem;
+    }
+    @include responsive(tab-port) {
+      margin-left: 2rem;
+    }
+    @include responsive(phone-m) {
+      margin: 0rem 0rem;
+    }
+
+    img {
+      box-shadow: -27px -19px 30px 1px rgba(0, 0, 0, 0.25);
+    }
+  }
+  .img-one:hover {
+    cursor: pointer;
+    z-index: 1;
+  }
+  .img-two:hover {
+    cursor: pointer;
+    z-index: 1;
+  }
+  .discripson-one {
+    grid-row-end: 15;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    margin-top: 15rem;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    transform: translate(200px, 0px);
+
+    @include responsive(tab-port) {
+      grid-column-start: 4;
+      grid-column-end: 11;
+      margin-top: 26rem;
+    }
+    @include responsive(phone-l) {
+      grid-row-start: 12;
+      grid-row-end: 12;
+      margin-left: 3rem;
+      width: 22rem;
+      margin-top: 0rem;
+    }
+    @include responsive(phone-s) {
+      width: 19rem;
+    }
+    h3 {
+      font-family: 'Tinos', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .active {
+    opacity: 1;
+  }
+  .discripson-two {
+    grid-row-end: 8;
+    grid-column-start: 10;
+    margin-left: 16rem;
+    margin-right: 4rem;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    transform: translate(-200px, 0px);
+    @include responsive(phone-l) {
+      // transform: translate(-0px, 0px);
+      width: 25rem;
+      margin-left: 3rem;
+      margin-right: 0rem;
+      grid-row-end: 13;
+    }
+    @include responsive(phone-s) {
+      width: 19rem;
+    }
+
+    h3 {
+      font-family: 'Tinos', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  .circle {
+    position: absolute;
+
+    border-radius: 50%;
+    background-color: #d4f94e;
+  }
+  .one {
+    background: rgba(41, 209, 221, 0.5);
+    top: 5rem;
+    left: 4rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  .two {
+    background: rgba(0, 78, 146, 0.5);
+    top: 4rem;
+    left: 70rem;
+    width: 10rem;
+    height: 10rem;
+  }
+  .three {
+    background: rgba(223, 101, 138, 0.5);
+    top: 25rem;
+    left: 65rem;
+    width: 13rem;
+    height: 13rem;
+  }
+  .four {
+    background: rgba(218, 198, 27, 0.51);
+    top: 8rem;
+    left: 43rem;
+    width: 11rem;
+    height: 11rem;
+  }
+  .five {
+    background: rgba(35, 182, 94, 0.5);
+    top: 32rem;
+    left: 39rem;
+    width: 11rem;
+    height: 11rem;
+  }
+  .six {
+    background: rgba(174, 37, 216, 0.5);
+    top: 22rem;
+    left: 20rem;
+    width: 11.5rem;
+    height: 11.5rem;
+  }
+}

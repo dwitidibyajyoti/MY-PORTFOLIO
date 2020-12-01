@@ -1,0 +1,238 @@
+.Portfolio {
+  position: relative;
+  scroll-snap-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  background-image: url(../img/Vector.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  max-width: 1536px;
+  margin: auto;
+
+  @include responsive(phone-l) {
+    background-image: none;
+  }
+
+  .Portfolio-content {
+    z-index: -10;
+
+    .header {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 2rem;
+
+      h2 {
+        font-family: 'Tinos', serif;
+        font-size: 2.3rem;
+        @include responsive(phone-m) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    img {
+      width: 15.6rem;
+      height: 15.6rem;
+      border-radius: 50%;
+      margin-top: 1em;
+      @include responsive(tab-land) {
+        width: 16rem;
+        height: 16rem;
+        margin-top: 0rem;
+      }
+      @include responsive(phone-l) {
+        width: 13rem;
+        height: 13rem;
+        margin-top: 0rem;
+      }
+      @include responsive(phone-m) {
+        width: 11rem;
+        height: 11rem;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    width: 80%;
+
+    justify-content: space-between;
+    margin: 2em auto;
+    @include responsive(phone-l) {
+      flex-direction: column;
+    }
+    @include responsive(phone-m) {
+      height: 40%;
+    }
+
+    .footer1 {
+      .bio-data {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+        @include responsive(phone-l) {
+          font-size: 1.1rem;
+        }
+
+        h3:last-child {
+          margin-left: 2rem;
+          @include responsive(phone-l) {
+            margin-left: 0.6rem;
+          }
+        }
+      }
+    }
+
+    .foot {
+      width: 38%;
+      @include responsive(phone-m) {
+        margin-left: 0.5rem;
+      }
+      @include responsive(phone-l) {
+        width: 100%;
+      }
+
+      h2 {
+        font-family: 'Tinos', serif;
+        font-size: 2rem;
+      }
+      P {
+        font-size: 1.5rem;
+        font-family: 'Tomorrow', sans-serif;
+        @include responsive(phone-l) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .middle-bar {
+      justify-content: center;
+
+      .bar {
+        width: 2px;
+        height: 100%;
+        background: white;
+        margin: auto;
+
+        @include responsive(phone-l) {
+          height: 2px;
+          width: 90%;
+
+          margin: 1rem auto;
+          background: linear-gradient(90deg, #dae2f8 0%, #d6a4a4 100%);
+        }
+      }
+    }
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    background-color: yellow;
+    z-index: -1;
+  }
+  .pone {
+    top: 3rem;
+    left: 24rem;
+    width: 6rem;
+    height: 6rem;
+
+    background-color: #ed9e6b;
+  }
+  .ptwo {
+    top: 5rem;
+    left: 9rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: #1cce2e;
+    @include responsive(phone-l) {
+      display: none;
+    }
+  }
+  .pthree {
+    top: 19rem;
+    left: 9rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: #9e809a;
+  }
+  .pfour {
+    top: 28rem;
+    left: 12rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #96d7c5;
+  }
+  .pfive {
+    top: 19rem;
+    left: 20rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: #d4f94e;
+  }
+  .psix {
+    top: 32rem;
+    left: 33rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: #d83cbe;
+  }
+  .pseven {
+    top: 22rem;
+    right: 27rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: #f9524e;
+  }
+  .peight {
+    top: 6rem;
+    right: 10rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: #d61e90;
+    @include responsive(phone-l) {
+      display: none;
+    }
+  }
+  .pnine {
+    top: 2rem;
+    right: 27rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: #343ecf;
+  }
+  .pten {
+    top: 32rem;
+    right: 8rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #ad8ca0;
+  }
+  .peleven {
+    top: 34rem;
+    right: 35rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: #ad8ca0;
+    @include responsive(phone-l) {
+      display: none;
+    }
+  }
+  .ptwelve {
+    top: 17rem;
+    right: 6rem;
+    width: 12rem;
+    height: 12rem;
+    background-color: #ad8ca0;
+  }
+  .pthirteen {
+    background-color: #ad8ca0;
+  }
+  .pfourteen {
+    background-color: #ad8ca0;
+  }
+}

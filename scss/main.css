@@ -1,46 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-@media only screen and (max-width: 1233px) {
-  * {
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  * {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  * {
-    font-size: 13px;
-  }
-}
-
-html {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-  -ms-scroll-snap-points-y: repeat(100vh);
-      scroll-snap-points-y: repeat(100vh);
-  overflow-y: scroll;
-}
-
-body {
-  font-family: 'Tomorrow', sans-serif;
-  background: -webkit-gradient(linear, left top, right top, from(#d53369), to(#cbad6d));
-  background: linear-gradient(90deg, #d53369 0%, #cbad6d 100%);
-  background-repeat: repeat-y;
-  background-size: cover;
-  color: white;
-  max-width: 100vw;
-}
-
 .home {
   width: 80%;
   margin: auto;
@@ -49,6 +6,8 @@ body {
   position: relative;
   overflow-x: hidden;
   scroll-snap-align: center;
+  max-width: 1536px;
+  margin: auto;
 }
 
 .nav-bar {
@@ -117,6 +76,13 @@ body {
   margin-top: 3em;
 }
 
+@media only screen and (min-width: 1800px) {
+  .content {
+    margin-top: 0;
+    margin: auto 0px;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .content {
     -webkit-box-pack: justify;
@@ -158,7 +124,7 @@ body {
 
 @media screen and (max-width: 330px) {
   .content {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-top: 11rem;
   }
 }
@@ -354,6 +320,8 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -1;
+  max-width: 1536px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 500px) {
@@ -673,6 +641,8 @@ body {
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   scroll-snap-align: center;
+  max-width: 1536px;
+  margin: auto;
 }
 
 .my-work .img-one {
@@ -1362,12 +1332,74 @@ body {
   }
 }
 
+@media only screen and (min-width: 1800px) {
+  .imglood {
+    -webkit-transform: translate(29px, -244px);
+            transform: translate(29px, -244px);
+  }
+}
+
 .lod-animay {
   height: 14rem;
 }
 
 .onlode {
   display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1233px) {
+  * {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  * {
+    font-size: 23px;
+  }
+}
+
+html {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  -ms-scroll-snap-points-y: repeat(100vh);
+      scroll-snap-points-y: repeat(100vh);
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Tomorrow', sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#d53369), to(#cbad6d));
+  background: linear-gradient(90deg, #d53369 0%, #cbad6d 100%);
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: white;
+  max-width: 100vw;
 }
 
 @-webkit-keyframes lodeanimation {

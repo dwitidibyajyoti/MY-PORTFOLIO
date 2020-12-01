@@ -1,0 +1,233 @@
+.home {
+  width: 80%;
+  margin: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-snap-align: center;
+  max-width: 1536px;
+  margin: auto;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include responsive(phone-m) {
+    justify-content: center;
+  }
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  .logo {
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    margin: 0px 10px;
+    font-size: 1.2em;
+    font-family: 'Playfair Display SC', serif;
+  }
+
+  .nav-itom {
+    @include responsive(phone-m) {
+      display: none;
+    }
+  }
+  .nav-itom :last-child {
+    margin-right: 0px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 3em;
+  @include responsive(big-desktop) {
+    margin-top: 0;
+    margin: auto 0px;
+  }
+  @include responsive(tab-port) {
+    justify-content: space-between;
+    margin: auto;
+    //background-image: url('../img/hero-illustration\ 1.svg');
+    img {
+      opacity: 0.5;
+    }
+    background-size: cover;
+    margin-left: 5rem;
+  }
+  .header1 {
+    @include responsive(tab-port) {
+      width: 15rem;
+    }
+  }
+  @include responsive(tab-port) {
+    margin-top: 10rem;
+  }
+  @include responsive(tab-land) {
+    margin-top: 8rem;
+  }
+  @include responsive(phone-m) {
+    margin-left: 3rem;
+    margin-top: 11rem;
+  }
+  @include responsive(phone-s) {
+    margin-left: 0.5rem;
+    margin-top: 11rem;
+  }
+
+  .tex {
+    width: 50%;
+    height: 100%;
+  }
+  .home-svg {
+    width: 50%;
+    height: 100%;
+    min-width: 380px;
+    img {
+      @include responsive(phone-l) {
+        display: none;
+      }
+    }
+  }
+  img {
+    //height: 475px;
+    //width: 531px;
+    // height: 36rem;
+    // width: 41rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    font-family: 'Tinos', serif;
+    color: white;
+    font-size: 4.5rem;
+    margin-bottom: 0.3rem;
+    @include responsive(tab-land) {
+      font-size: 3rem;
+    }
+  }
+  .paragraph {
+    color: white;
+    font-size: 1.7em;
+    margin-top: 0.6rem;
+    @include responsive(phone-l) {
+      width: 20rem;
+    }
+    p {
+      @include responsive(phone-l) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+.icon-pack {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 2.5rem;
+  transform-origin: center;
+  position: fixed;
+  transform: rotate(90deg);
+  top: 50%;
+  left: -15%;
+  z-index: 100;
+  transition: all 0.3 ease-in;
+  @include responsive(tab-port) {
+    width: 36%;
+    margin-left: 0.5rem;
+  }
+  @include responsive(phone-l) {
+    font-size: 10px;
+    width: 65%;
+    margin-left: -4.3rem;
+  }
+  @include responsive(phone-m) {
+    margin-left: -3.3rem;
+  }
+  @include responsive(phone-s) {
+    left: -13%;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    transform: rotate(-90deg);
+    @include responsive(phone-l) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.remove {
+  display: none;
+}
+.circle {
+  .circle-two {
+    background-color: #e9c0bc;
+    position: absolute;
+    top: 9rem;
+    left: 6rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    width: 27.7vh;
+    height: 27.7vh;
+  }
+  .circle-three {
+    background-color: #e9af3d;
+    position: absolute;
+    top: 23rem;
+    left: 32rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    width: 30.4vh;
+    height: 30.4vh;
+  }
+  .circle-four {
+    background-color: #40476a;
+    position: absolute;
+    top: 4rem;
+    left: 33rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    width: 22.1vh;
+    height: 22.1vh;
+  }
+  .circle-one {
+    background-color: #0ed1a2;
+    position: absolute;
+    top: 3rem;
+    left: 65rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    width: 22.1vh;
+    height: 22.1vh;
+  }
+  .circle-five {
+    background-color: #1bf1f1;
+    position: absolute;
+    top: 19rem;
+    left: 62rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+    width: 22.1vh;
+    height: 22.1vh;
+  }
+}
