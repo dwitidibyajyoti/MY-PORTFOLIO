@@ -1,0 +1,38 @@
+@mixin responsive($brakepoint) {
+  @if $brakepoint==phone-s {
+    @media screen and(max-width: 330px) {
+      @content;
+    }
+  }
+  @if $brakepoint==phone-m {
+    @media only screen and(max-width:378px) {
+      @content;
+    }
+  }
+  @if $brakepoint==phone-l {
+    @media only screen and(max-width:500px) {
+      @content;
+    }
+  }
+
+  @if $brakepoint==(tab-768) {
+    @media only screen and(max-width:769px) {
+      @content;
+    }
+  }
+  @if $brakepoint==tab-port {
+    @media only screen and(max-width:900px) {
+      @content;
+    }
+  }
+  @if $brakepoint==tab-land {
+    @media only screen and(max-width:1233px) {
+      @content;
+    }
+  }
+  @if $brakepoint==big-desktop {
+    @media only screen and(min-width:1800px) {
+      @content;
+    }
+  }
+}

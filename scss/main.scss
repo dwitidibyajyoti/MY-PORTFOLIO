@@ -1,7 +1,17 @@
+@import 'meadiaQuarry';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @include responsive(tab-land) {
+    font-size: 15px;
+  }
+  @include responsive(tab-port) {
+    font-size: 13px;
+  }
+  @include responsive(phone-l) {
+    font-size: 13px;
+  }
 }
 html {
   scroll-snap-type: y mandatory;
@@ -30,6 +40,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include responsive(phone-m) {
+    justify-content: center;
+  }
 
   border: none;
   outline: none;
@@ -47,6 +60,12 @@ body {
     font-size: 1.2em;
     font-family: 'Playfair Display SC', serif;
   }
+
+  .nav-itom {
+    @include responsive(phone-m) {
+      display: none;
+    }
+  }
   .nav-itom :last-child {
     margin-right: 0px;
   }
@@ -61,6 +80,35 @@ body {
   justify-content: space-between;
   height: 100%;
   margin-top: 3em;
+  @include responsive(tab-port) {
+    justify-content: space-between;
+    margin: auto;
+    //background-image: url('../img/hero-illustration\ 1.svg');
+    img {
+      opacity: 0.5;
+    }
+    background-size: cover;
+    margin-left: 5rem;
+  }
+  .header1 {
+    @include responsive(tab-port) {
+      width: 15rem;
+    }
+  }
+  @include responsive(tab-port) {
+    margin-top: 10rem;
+  }
+  @include responsive(tab-land) {
+    margin-top: 8rem;
+  }
+  @include responsive(phone-m) {
+    margin-left: 3rem;
+    margin-top: 11rem;
+  }
+  @include responsive(phone-s) {
+    margin-left: 1rem;
+    margin-top: 11rem;
+  }
 
   .tex {
     width: 50%;
@@ -70,6 +118,11 @@ body {
     width: 50%;
     height: 100%;
     min-width: 380px;
+    img {
+      @include responsive(phone-l) {
+        display: none;
+      }
+    }
   }
   img {
     //height: 475px;
@@ -83,13 +136,24 @@ body {
   h2 {
     font-family: 'Tinos', serif;
     color: white;
-    font-size: 3.7em;
+    font-size: 4.5rem;
     margin-bottom: 0.3rem;
+    @include responsive(tab-land) {
+      font-size: 3rem;
+    }
   }
   .paragraph {
     color: white;
     font-size: 1.7em;
     margin-top: 0.6rem;
+    @include responsive(phone-l) {
+      width: 20rem;
+    }
+    p {
+      @include responsive(phone-l) {
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 .icon-pack {
@@ -104,11 +168,30 @@ body {
   left: -15%;
   z-index: 100;
   transition: all 0.3 ease-in;
+  @include responsive(tab-port) {
+    width: 36%;
+    margin-left: 0.5rem;
+  }
+  @include responsive(phone-l) {
+    font-size: 10px;
+    width: 65%;
+    margin-left: -4.3rem;
+  }
+  @include responsive(phone-m) {
+    margin-left: -3.3rem;
+  }
+  @include responsive(phone-s) {
+    left: -13%;
+  }
 
   img {
     width: 40px;
     height: 40px;
     transform: rotate(-90deg);
+    @include responsive(phone-l) {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 .remove {
@@ -183,16 +266,25 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -1;
+  @include responsive(phone-l) {
+    background-image: none;
+  }
+
   .Portfolio-content {
     z-index: -10;
+
     .header {
       display: flex;
       align-items: center;
       flex-direction: column;
       margin-top: 2rem;
+
       h2 {
         font-family: 'Tinos', serif;
         font-size: 2.3rem;
+        @include responsive(phone-m) {
+          font-size: 1.5rem;
+        }
       }
     }
     img {
@@ -200,27 +292,62 @@ body {
       height: 15.6rem;
       border-radius: 50%;
       margin-top: 1em;
+      @include responsive(tab-land) {
+        width: 16rem;
+        height: 16rem;
+        margin-top: 0rem;
+      }
+      @include responsive(phone-l) {
+        width: 13rem;
+        height: 13rem;
+        margin-top: 0rem;
+      }
+      @include responsive(phone-m) {
+        width: 11rem;
+        height: 11rem;
+      }
     }
   }
+
   .footer {
     display: flex;
     width: 80%;
 
     justify-content: space-between;
     margin: 2em auto;
+    @include responsive(phone-l) {
+      flex-direction: column;
+    }
+    @include responsive(phone-m) {
+      height: 40%;
+    }
+
     .footer1 {
       .bio-data {
         display: flex;
         flex-direction: row;
         margin-top: 2rem;
+        @include responsive(phone-l) {
+          font-size: 1.1rem;
+        }
+
         h3:last-child {
           margin-left: 2rem;
+          @include responsive(phone-l) {
+            margin-left: 0.6rem;
+          }
         }
       }
     }
 
     .foot {
       width: 38%;
+      @include responsive(phone-m) {
+        margin-left: 0.5rem;
+      }
+      @include responsive(phone-l) {
+        width: 100%;
+      }
 
       h2 {
         font-family: 'Tinos', serif;
@@ -229,6 +356,9 @@ body {
       P {
         font-size: 1.5rem;
         font-family: 'Tomorrow', sans-serif;
+        @include responsive(phone-l) {
+          font-size: 1.1rem;
+        }
       }
     }
     .middle-bar {
@@ -239,6 +369,14 @@ body {
         height: 100%;
         background: white;
         margin: auto;
+
+        @include responsive(phone-l) {
+          height: 2px;
+          width: 90%;
+
+          margin: 1rem auto;
+          background: linear-gradient(90deg, #dae2f8 0%, #d6a4a4 100%);
+        }
       }
     }
   }
@@ -264,6 +402,9 @@ body {
     width: 10rem;
     height: 10rem;
     background-color: #1cce2e;
+    @include responsive(phone-l) {
+      display: none;
+    }
   }
   .pthree {
     top: 19rem;
@@ -306,6 +447,9 @@ body {
     width: 9rem;
     height: 9rem;
     background-color: #d61e90;
+    @include responsive(phone-l) {
+      display: none;
+    }
   }
   .pnine {
     top: 2rem;
@@ -327,6 +471,9 @@ body {
     width: 10rem;
     height: 10rem;
     background-color: #ad8ca0;
+    @include responsive(phone-l) {
+      display: none;
+    }
   }
   .ptwelve {
     top: 17rem;
@@ -358,6 +505,28 @@ body {
   .img-one {
     width: 45.6rem;
     height: 24.3rem;
+    @include responsive(phone-l) {
+      margin: 0rem 2rem;
+    }
+    @include responsive(phone-m) {
+      margin: 0rem 0rem;
+      margin-left: 0rem;
+    }
+    .img-one-responsive {
+      display: none;
+    }
+    @include responsive(phone-l) {
+      width: 45.6rem-15rem;
+      height: 24.3rem-15rem;
+      .img-one-responsive {
+        display: block;
+      }
+      .img-one-full {
+        display: none;
+      }
+    }
+    @include responsive(phone-l) {
+    }
 
     grid-column-start: 10;
     //grid-column-end: 4;
@@ -367,6 +536,13 @@ body {
     img {
       box-shadow: -27px -19px 30px 1px rgba(0, 0, 0, 0.25);
     }
+    @include responsive(tab-land) {
+      width: 45.6rem-10rem;
+      height: 24.3rem-10rem;
+    }
+    @include responsive(tab-port) {
+      margin-right: 12rem;
+    }
   }
   .img-two {
     grid-column-start: 2;
@@ -375,6 +551,33 @@ body {
     grid-row-end: 8;
     width: 45.6rem;
     height: 24.3rem;
+    @include responsive(phone-l) {
+      margin: 0rem 2rem;
+    }
+
+    .img-two-responsive {
+      display: none;
+    }
+    @include responsive(phone-l) {
+      width: 45.6rem-15rem;
+      height: 24.3rem-15rem;
+      .img-two-full {
+        display: none;
+      }
+      .img-two-responsive {
+        display: block;
+      }
+    }
+    @include responsive(tab-land) {
+      width: 45.6rem-10rem;
+      height: 24.3rem-10rem;
+    }
+    @include responsive(tab-port) {
+      margin-left: 2rem;
+    }
+    @include responsive(phone-m) {
+      margin: 0rem 0rem;
+    }
 
     img {
       box-shadow: -27px -19px 30px 1px rgba(0, 0, 0, 0.25);
@@ -397,6 +600,22 @@ body {
     opacity: 0;
     transition: all 0.5s ease-in;
     transform: translate(200px, 0px);
+
+    @include responsive(tab-port) {
+      grid-column-start: 4;
+      grid-column-end: 11;
+      margin-top: 26rem;
+    }
+    @include responsive(phone-l) {
+      grid-row-start: 12;
+      grid-row-end: 12;
+      margin-left: 3rem;
+      width: 22rem;
+      margin-top: 0rem;
+    }
+    @include responsive(phone-s) {
+      width: 19rem;
+    }
     h3 {
       font-family: 'Tinos', serif;
       font-size: 1.5rem;
@@ -418,6 +637,16 @@ body {
     transition: all 0.5s ease-in;
     opacity: 0;
     transform: translate(-200px, 0px);
+    @include responsive(phone-l) {
+      // transform: translate(-0px, 0px);
+      width: 25rem;
+      margin-left: 3rem;
+      margin-right: 0rem;
+      grid-row-end: 13;
+    }
+    @include responsive(phone-s) {
+      width: 19rem;
+    }
 
     h3 {
       font-family: 'Tinos', serif;
@@ -490,10 +719,39 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
+  @include responsive(phone-l) {
+    overflow: hidden;
+  }
   .icon-pack-footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @include responsive(phone-s) {
+      a :first-child {
+        margin-left: 0rem;
+      }
+      a :last-child {
+        margin-right: 0rem;
+      }
+      margin: 0rem auto;
+    }
+
+    @include responsive(phone-l) {
+      a {
+        width: 5rem;
+      }
+      img {
+        width: 3rem;
+        height: 3rem;
+        margin: 0rem;
+      }
+    }
+    @include responsive(phone-m) {
+      margin-right: 3rem;
+    }
+    @include responsive(tab-port) {
+      margin-top: 3rem;
+    }
 
     img {
       margin: 0rem 2.5rem;
@@ -527,7 +785,10 @@ body {
     flex-direction: column;
     //justify-content: space-between;
     //align-content: flex-end;
-
+    margin: 0;
+    img {
+      opacity: 1;
+    }
     .gamilcontact {
       width: 80%;
       margin: 0px auto;
@@ -536,6 +797,17 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      @include responsive(phone-l) {
+        flex-direction: column;
+      }
+      img {
+        width: 5rem;
+        height: 5rem;
+        @include responsive(phone-l) {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
 
       .home-content {
         display: flex;
@@ -545,10 +817,16 @@ body {
         width: auto;
         margin: 0;
         flex: 21;
+        @include responsive(phone-l) {
+          margin-right: 1rem;
+        }
 
         h4 {
           margin-top: 1rem;
           font-size: 1.2rem;
+          @include responsive(phone-l) {
+            font-size: 1rem;
+          }
         }
       }
       .gmail {
@@ -563,6 +841,9 @@ body {
         h4 {
           margin-top: 1rem;
           font-size: 1.2rem;
+          @include responsive(phone-l) {
+            font-size: 1rem;
+          }
         }
       }
       .goTop {
@@ -571,10 +852,19 @@ body {
         display: flex;
         transform: rotate(90deg);
         cursor: pointer;
-
+        @include responsive(phone-l) {
+          height: 21rem;
+          width: 30rem;
+        }
+        @include responsive(phone-s) {
+          height: 6rem;
+        }
         h1 {
           font-size: 1.5rem;
           animation: headerwanimation 3s ease infinite;
+          @include responsive(phone-l) {
+            font-size: 1.2rem;
+          }
         }
         span {
           display: inline-block;
@@ -593,8 +883,19 @@ body {
       justify-content: space-between;
       align-items: center;
       height: 4rem;
+      @include responsive(phone-m) {
+        span {
+          font-size: 0.9rem;
+        }
+      }
       h2 {
         font-size: 1.2rem;
+        @include responsive(phone-l) {
+          font-size: 1rem;
+        }
+        @include responsive(phone-m) {
+          font-size: 0.9rem;
+        }
       }
     }
     .copy {
@@ -652,6 +953,15 @@ body {
 }
 .imglood {
   transform: translate(20px, -172px);
+  @include responsive(phone-l) {
+    transform: translate(16px, -139px);
+  }
+  @include responsive(tab-land) {
+    transform: translate(19px, -161px);
+  }
+  @include responsive(tab-768) {
+    transform: translate(16px, -139px);
+  }
 }
 .lod-animay {
   height: 14rem;

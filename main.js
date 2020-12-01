@@ -6,11 +6,17 @@ const loodAnimay = document.querySelector('.lodedive');
 const year = document.querySelector('.year');
 const footer = document.querySelector('.footrmain');
 const iconPack = document.querySelector('.icon-pack');
+const myAge = document.querySelector('.myAge');
 
 let animation = false;
 window.addEventListener('load', () => {
   mainContent.classList.remove('onlode');
   loodAnimay.classList.add('onlode');
+  let currentYear = new Date().getFullYear();
+  let myDobYear = 2001;
+  year.innerHTML = currentYear;
+
+  myAge.innerHTML = currentYear - myDobYear;
 });
 // debounce function
 const debounce = (fn, dely) => {
@@ -153,7 +159,7 @@ protfolioTimeline
   .from('.header-para', {x: -300, ease: 'circ'}, '<0.3')
   .from('.footer1', {x: -300, ease: 'circ'})
   .from('.footer2', {x: 300, ease: 'circ'}, '<0')
-  .from('.bar', {height: 0, duration: 3, ease: 'circ'})
+  .from('.bar', {height: 0, width: 0, duration: 3, ease: 'circ'})
   //bobble
   .from('.pthree', {y: -300, ease: 'bounce'}, 0)
   .from('.pnine', {y: -300, ease: 'bounce'}, '<0.1')
